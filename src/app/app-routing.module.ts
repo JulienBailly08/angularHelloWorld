@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: '', component: HomePageComponent},
   { path: 'cars', component: CarsListComponent },
   { path: 'drivers', component: DriversListComponent },
-  { path: '**', pathMatch: 'full', component:FourOhFourComponent}
+  { path: 'not-found', component:FourOhFourComponent},
+  { path: '**', redirectTo:'not-found'}
   
 ];
 
