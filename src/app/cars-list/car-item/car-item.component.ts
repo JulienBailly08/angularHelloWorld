@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CarItemComponent implements OnInit {
 
-  @Input() enfant:any;
+  @Input() car: any;
 
   constructor() { }
 

@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarsListComponent implements OnInit {
 
-  enfantUn:string="premier truc";
-  enfantDeux:string="deuxième truc";
-  enfantTrois:string="troisième truc";
+  enfantUn:any = { name: "Mercedes AMG", price: 42000 };
+  enfantDeux:any = { name: "Range Rover Evoque", price: 55000 };
+  enfantTrois:any = { name: "Ferrari F50", price: 35000 };
 
   constructor() { }
 
