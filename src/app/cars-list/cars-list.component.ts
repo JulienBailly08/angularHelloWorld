@@ -7,9 +7,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarsListComponent implements OnInit {
 
-  constructor() { }
+  mardiMatin: any = "Ils ont l'air ruinés";
+  age: number = 13;
+  game: any = {
+    title: "bF BC2",
+    support: "PC of course",
+    multi: 128
+  };
+
+  getStock() {
+    return 236;
+  }
+
+  monImage = "assets/img/image.jpg";
+
+  getWakeUp() {
+    console.log('ta race');
+  }
+
+  constructor() {
+    this.getWakeUp();
+  }
 
   ngOnInit(): void {
+
+
   }
 
 }

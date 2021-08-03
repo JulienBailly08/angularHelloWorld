@@ -1,1 +1,16 @@
 <h1 class="my-5">Nos Voitures</h1>
+
+{{mardiMatin}} <br><hr>
+
+Age légal de... : {{age}}
+
+
+<div class="border p-2 bg-dark text-white">
+  <h1>{{game.title}}</h1>
+  <p>{{game.support}}</p>
+  <p>{{game.multi}}</p>
+  <p>En stock : {{getStock()}}</p>
+  <img [src]="monImage" class="img-fluid">
+</div>
+
+{{getWakeUp()}}

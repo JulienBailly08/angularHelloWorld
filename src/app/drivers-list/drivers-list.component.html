@@ -1,1 +1,21 @@
 <h1 class="my-5">Nos Pilotes</h1>
+
+
+<h2>Event Binding</h2>
+
+<button (click)="onClickButton()" class="btn  btn-info my-5 shadow">cliquez moi</button>
+
+<h3 (mouseover)="onSurvol()" class="bg-warning w-50 p-4">Survolez moi</h3>
+
+<input type="text" (blur)="onLeave()">
+
+<h4>Autre exemple</h4>
+
+<input class="form-group" #banane type="text">
+
+<button (click)="onClickButton2(banane.value)">Envoyer</button>
+
+<div class="d-flex">
+    <h2>{{banane.value}}</h2>
+    <input type="text" [placeholder]="banane.value">
+</div>
