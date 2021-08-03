@@ -25,6 +25,7 @@ export class CarsListComponent implements OnInit {
     power: 1200,
     perf: 2.8
   };
+  
   carUpdate: any;
 
   constructor() { }

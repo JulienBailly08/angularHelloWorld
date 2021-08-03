@@ -8,10 +8,14 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CarItemComponent implements OnInit {
 
   @Input() car: any;
+  reserved: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  reserveOnClick() {
+    this.reserved = true;
+  }
 }
