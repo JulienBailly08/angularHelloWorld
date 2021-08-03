@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarsListComponent implements OnInit {
 
+  enfantUn:string="premier truc";
+  enfantDeux:string="deuxième truc";
+  enfantTrois:string="troisième truc";
+
   constructor() { }
 
   ngOnInit(): void {
