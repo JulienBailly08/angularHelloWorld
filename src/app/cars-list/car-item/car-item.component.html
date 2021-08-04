@@ -1,8 +1,8 @@
 <div class="p-5 shadow card border-warning m-2">
-    <h2>{{ car.name }}</h2>
-    <p>{{ car.pays }}</p>
+    <h2>{{ car.name | titlecase }}</h2>
+    <p>{{ car.pays | uppercase }}</p>
     <p>0 à 100 : {{car.perf}} sec</p>
-    <p>Puissance de kéké : {{car.power}} CH</p>
+    <p>Puissance : {{car.power}} Ch</p>
     <hr>
     <button class ="btn btn-dark" (click)=reserveOnClick() [disabled]=isReserved>Réserver la voiture</button>
     <p class="mt-2 text-warning">{{ bookingMessage }}</p>

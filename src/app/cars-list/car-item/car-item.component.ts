@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-car-item',
   templateUrl: './car-item.component.html',
@@ -17,6 +18,6 @@ export class CarItemComponent implements OnInit {
 
   reserveOnClick() {
     this.isReserved = true;
-    this.bookingMessage ="Réservation prise en compte"
+    this.bookingMessage ="Réservation prise en compte"  
   }
 }
