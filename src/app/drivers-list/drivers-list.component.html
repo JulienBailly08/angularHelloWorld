@@ -13,10 +13,9 @@
     <p class="text-white p-3">
         {{book.author}}
     </p>
-    <p class="text-white p-3">
+    <p class="text-white p-3"> Prix :
         <span *ngIf="book.price">{{book.price}}</span>
-        <span *ngIf="book.price == null">Non comuniqué</span>
-        
+        <span *ngIf="book.price == null">Non communiqué</span>      
     </p>
 
 
