@@ -6,9 +6,9 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./car-item.component.css']
 })
 export class CarItemComponent implements OnInit {
-
   @Input() car: any;
-  reserved: boolean = false;
+  bookingMessage:string=""
+  isReserved: boolean = false;
 
   constructor() { }
 
@@ -16,6 +16,7 @@ export class CarItemComponent implements OnInit {
   }
 
   reserveOnClick() {
-    this.reserved = true;
+    this.isReserved = true;
+    this.bookingMessage ="Réservation prise en compte"
   }
 }
