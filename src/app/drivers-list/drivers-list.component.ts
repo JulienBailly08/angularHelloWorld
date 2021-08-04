@@ -15,7 +15,9 @@ export class DriversListComponent implements OnInit {
   book:any ={
     title:'le secret des croisades',
     author:'On sais plus',
-    price: null
+    price: -15
   }
+
+  games:string[] = ["Harry Potter 4", "PES", "Assassin Creed", "Mine craft"];
 
 }
