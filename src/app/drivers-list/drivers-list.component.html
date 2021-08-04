@@ -6,4 +6,18 @@
         Pilote Présent et disponible
     </p>
 
+    <h2 class="text-white p-3">
+        {{book.title}}
+    </h2>
+
+    <p class="text-white p-3">
+        {{book.author}}
+    </p>
+    <p class="text-white p-3">
+        <span *ngIf="book.price">{{book.price}}</span>
+        <span *ngIf="book.price == null">Non comuniqué</span>
+        
+    </p>
+
+
 </div>
