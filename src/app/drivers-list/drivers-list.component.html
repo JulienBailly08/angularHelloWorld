@@ -1,1 +1,29 @@
 <h1 class="my-5">Nos Pilotes</h1>
+
+
+<p [ngClass]="{'
+        text-center':true}" >
+
+Texte plus ou moins utile 😴😴😴
+
+</p>
+
+<div class="card shadow text-center">
+
+    <h2>{{ product.label }}</h2>
+    <hr>
+    <p>{{product.price}} €</p>
+
+    <p>Quantité :
+        <span [ngClass]="{
+            'badge':true,
+            'badge-success':product.stock >5,
+            'badge-warning':product.stock <=5,
+            'badge-danger':product.stock ==0
+        }">
+            {{product.stock}} en stock
+        </span>
+
+    </p>
+
+</div>
