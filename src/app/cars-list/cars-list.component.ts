@@ -13,10 +13,10 @@ export class CarsListComponent implements OnInit {
   cars: any = [
     {
       name: "pagani huayra",
-      pays: "italie",
+      pays: null,
       coverImage:"./assets/img/cars/pagani.jpg",
-      power: 765,
-      perf: 3.2
+      power: null,
+      perf: null
     },
     {
       name: "koenigsegg agera rs",
