@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class DriversListComponent implements OnInit {
 
   colorOne:string ="blue";
-  onOff:boolean=true;
+  onOff:boolean=false;
 
 product:any = {
   label: "iphone 12",

@@ -25,5 +25,12 @@ Texte plus ou moins utile 😴😴😴
         </span>
 
     </p>
-
 </div>
+<p class="m-5" [ngClass]="{
+    'text-center': onOff,
+    'text-white' : onOff,
+    'bg-dark' : onOff
+}">
+    Style editeur de txte live, façon rezos actuels
+</p>
+<button class="btn btn-warning" (click)=onSwitch()>Action</button>
