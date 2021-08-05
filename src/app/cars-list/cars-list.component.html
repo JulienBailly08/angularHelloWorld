@@ -2,7 +2,8 @@
 
 <div class="badge badge-dark my-5">Données mise à jour : {{carUpdate | date:'EEEE dd MMMM yyyy à H:mm' }}</div>
 
-<div class="row">
+
+<div class="card-deck justify-content-center">
 
     <app-car-item *ngFor="let car of cars" [car]="car"></app-car-item>
 
