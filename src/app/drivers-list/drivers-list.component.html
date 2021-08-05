@@ -22,3 +22,5 @@
 <ul>
     <li *ngFor="let game of games">{{game}}</li>
 </ul>
+
+<p *ngFor="let variable of games; let i =index">J'affiche la variable: {{variable}}<br> j'affiche la valeur d'index : {{i}}</p>
