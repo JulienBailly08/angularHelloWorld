@@ -33,7 +33,12 @@
 °,...,°
 </button>
 
-<div class="shadow" [ngStyle]="{color:colorOne, margin:marginPts, padding:'20px'}">
+<div class="shadow" [ngStyle]="{
+            color:colorTwo, 
+            margin:marginPts, 
+            padding:'20px',
+            backgroundColor :onOff ? getCouleur() : colorOne
+}">
 
     et du NgStyle la difference ?
     décalre un objet dedans.... Mais pourquoi???!!!???!!! 🤮

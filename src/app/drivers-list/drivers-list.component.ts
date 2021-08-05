@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DriversListComponent implements OnInit {
 colorOne:string = "blue";
+colorTwo:string ="white";
 
   constructor() { }
   onOff:boolean=true;
