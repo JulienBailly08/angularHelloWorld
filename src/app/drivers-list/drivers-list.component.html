@@ -1,26 +1,34 @@
 <h1 class="my-5">Nos Pilotes</h1>
 
-<div *ngIf="isOnline" class="card bg-dark">
 
-    <p class="text-white p-3">
-        Pilote Présent et disponible
-    </p>
 
-    <h2 class="text-white p-3">
-        {{book.title}}
-    </h2>
+<p [style.color]="colorOne">
+    style.color est une couleur en props
+</p>
 
-    <p class="text-white p-3">
-        {{book.author}}
-    </p>
-    <p class="text-white p-3"> Prix :
-        <span *ngIf="book.price && book.price > 0">{{book.price}} €</span>
-        <span *ngIf="book.price == null || book.price <=0">Non communiqué</span>
-    </p>
-</div>
+<p [style.color]="getCouleur()">
+    style.color fonctionne avec une methode!!!
+</p>
+<p [style.background-color]="getCouleur()">
+    style.background-color fonctionne avec une methode!!!
+</p>
 
-<ul>
-    <li *ngFor="let game of games">{{game}}</li>
-</ul>
+<p [style.color]="'green'">
+    style.color fonctionne en dur mais bon....
+</p>
 
-<p *ngFor="let variable of games; let i =index">J'affiche la variable: {{variable}}<br> j'affiche la valeur d'index : {{i}}</p>
+<p [class]="getBootstrap()">
+    Et là ????? Bein ca bootstrapise Mais ça sert à rien !!!!!
+</p>
+
+
+<h1 [style.background-color]="onOff ? colorOne : getCouleur()">
+
+    Affichage selon condition
+</h1>
+
+<button (click)="onSwitch()" class="btn btn-dark">
+    <span *ngIf="!onOff">On</span>
+    <span *ngIf="onOff">Off</span>
+°,...,°
+</button>
