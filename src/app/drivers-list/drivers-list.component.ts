@@ -10,6 +10,7 @@ colorOne:string = "blue";
 
   constructor() { }
   onOff:boolean=true;
+  marginPts:string="50px";
 
   ngOnInit(): void {
   }
