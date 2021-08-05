@@ -8,15 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class CarsListComponent implements OnInit {
 
   carUpdate: any;
-
-
+ 
   cars: any = [
     {
       name: "pagani huayra",
-      pays: null,
+      pays: "italie",
       coverImage:"./assets/img/cars/pagani.jpg",
-      power: null,
-      perf: null
+      power: 765,
+      perf: 3.2
     },
     {
       name: "koenigsegg agera rs",

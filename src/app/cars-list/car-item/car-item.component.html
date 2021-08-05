@@ -12,16 +12,24 @@
         </p>
 
         <p>Puissance :
-            <span *ngIf="car.power == null">Non communiquée</span>
-            <span *ngIf="car.power">{{car.power}} Ch</span>
+            <span *ngIf="car.power == null || car.power <0">Non communiquée</span>
+            
+            <span class="badge" 
+            *ngIf="car.power && car.power>0"
+            [ngClass]="{
+                'badge':true,
+                'badge-info': car.power < 1000,
+                'badge-warning': car.power >= 1000
+            }">
+            {{car.power}} Ch</span>         
         </p>
 
         <p>0 à 100 km/h :
-            <span *ngIf="car.perf == null">Non determiné</span>
-            <span *ngIf="car.perf">{{car.perf}} sec</span>
+            <span *ngIf="car.perf == null || car.perf <0">Non determiné</span>
+            <span *ngIf="car.perf && car.perf>0">{{car.perf}} sec</span>
         </p>
 
-        <p>{{bookingMessage}}</p>
+        <p [ngClass]="{'text-success':isBooked}">{{bookingMessage}}</p>
         <button class="btn btn-primary" (click)="onBooking()" [disabled]="isBooked">Réserver</button>
     </div>
 </div>
