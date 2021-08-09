@@ -8,7 +8,6 @@ import { Component, Input,OnInit } from '@angular/core';
 export class DriverItemComponent implements OnInit {
   @Input() driver: any;
   
-  //likeIts :number
 
   constructor() { }
 
