@@ -13,6 +13,7 @@ import { CarItemComponent } from './cars-list/car-item/car-item.component';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { FormsModule } from '@angular/forms';
+import { DriverItemComponent } from './drivers-list/driver-item/driver-item.component';
 registerLocaleData(localeFr, 'fr');
 
 
@@ -24,7 +25,8 @@ registerLocaleData(localeFr, 'fr');
     DriversListComponent,
     HomePageComponent,
     FourOhFourComponent,
-    CarItemComponent
+    CarItemComponent,
+    DriverItemComponent
   ],
   imports: [
     BrowserModule,
