@@ -1,1 +1,40 @@
-<p>driver-item works!</p>
+<div class="card text-center shadow" [ngClass]="{
+            'border-danger': driver.likeIts<0,
+            'border-success': driver.likeIts>0
+}">
+
+    <div class="card-header bg-dark text-white ">
+        <h2 class="card-title">{{driver.fullName | titlecase }}</h2>
+    </div>
+    <div class="card-body ">
+        <img [src]="driver.coverImage" class="" alt="photo {{driver.fullName}}">
+        <hr>
+        <p>
+            Origine :
+            <span *ngIf="driver.pays == null">NC</span>
+            <span>{{driver.pays | uppercase }}</span>
+        </p>
+
+        <p>Discipline :
+            <span [ngClass]="{
+                'badge':true,
+                'badge-success': driver.category == 'gymkhana',
+                'badge-primary': driver.category == 'nascar',
+                'badge-info': driver.category == 'rallye',
+                'badge-danger': driver.category == 'drag',
+                'badge-warning': driver.category == 'formule 1'
+                
+            }">{{ driver.category}} </span>
+        </p>
+        <div class="">
+            <button class="btn btn-success m-1"><i class="fas fa-thumbs-up text-white"></i></button>
+            <button class="btn btn-danger m-1"><i class="fas fa-thumbs-down text-white"></i></button>      
+        </div>
+            
+
+        
+
+
+    </div>
+</div>
+<hr>
