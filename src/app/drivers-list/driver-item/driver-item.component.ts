@@ -7,10 +7,20 @@ import { Component, Input,OnInit } from '@angular/core';
 })
 export class DriverItemComponent implements OnInit {
   @Input() driver: any;
+  
+  //likeIts :number
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onLike(){
+    this.driver.likeIts=this.driver.likeIts+1;
+  }
+
+  onDislike(){
+    this.driver.likeIts=this.driver.likeIts-1;
   }
 
 }
