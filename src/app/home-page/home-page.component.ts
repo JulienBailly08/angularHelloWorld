@@ -14,6 +14,8 @@ export class HomePageComponent implements OnInit {
 
   prixVente:number = this.resto.getPrice();
 
+  name:string = this.resto.name;
+
   constructor(  private bana: BananeService,
                 private resto: RestaurantService) {
     bana.getFruit();
