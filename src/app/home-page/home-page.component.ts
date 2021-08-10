@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BananeService } from '../services/banane.service';
 
 @Component({
   selector: 'app-home-page',
@@ -8,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class HomePageComponent implements OnInit {
   title:string ="Drive X";
 
-  constructor() { }
+  test:any= this.bana.getFruit(); 
+
+  constructor(private bana:BananeService) { 
+    this.bana.getFruit();
+  }
 
   ngOnInit(): void {
+    this.test;
   }
 
 }

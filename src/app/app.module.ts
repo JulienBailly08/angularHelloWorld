@@ -14,6 +14,9 @@ import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { FormsModule } from '@angular/forms';
 import { DriverItemComponent } from './drivers-list/driver-item/driver-item.component';
+
+import { BananeService } from './services/banane.service';
+
 registerLocaleData(localeFr, 'fr');
 
 
@@ -33,7 +36,8 @@ registerLocaleData(localeFr, 'fr');
     AppRoutingModule,
     FormsModule
   ],
-  providers: [{ provide: LOCALE_ID, useValue: "fr-FR" }],
+  providers: [{ provide: LOCALE_ID, useValue: "fr-FR" },
+              BananeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
