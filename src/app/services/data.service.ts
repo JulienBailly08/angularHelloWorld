@@ -121,8 +121,9 @@ export class DataService {
   };
 
   getNbBestDrivers(nb:number){
+    let dataDriversSlice = this.dataDrivers.slice(0,this.dataDrivers.lenght);
     
-    this.dataDrivers.sort(function compare(a: {likeIts:number},b: {likeIts:number}){
+    dataDriversSlice.sort(function compare(a: {likeIts:number},b: {likeIts:number}){
       if(a.likeIts > b.likeIts){
         return -1;
       }
@@ -132,11 +133,13 @@ export class DataService {
       return 0;
     });
 
-    return this.dataDrivers.slice(0, nb);    
+    return dataDriversSlice.slice(0, nb);    
   };
 
   getNbPowerfullCars(nb:number){
-    this.dataCars.sort(function compare(a: {power:number},b: {power:number}){
+    let dataCarsSlice = this.dataCars.slice(0, this.dataCars.lenght);
+
+    dataCarsSlice.sort(function compare(a: {power:number},b: {power:number}){
       if(a.power > b.power){
         return -1;
       }
@@ -146,7 +149,7 @@ export class DataService {
       return 0;
     });
 
-    return this.dataCars.slice(0, nb); 
+    return dataCarsSlice.slice(0, nb); 
   };
 
   constructor() { }
