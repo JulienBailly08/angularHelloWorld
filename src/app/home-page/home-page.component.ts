@@ -10,7 +10,9 @@ import { RestaurantService } from '../services/restaurant.service';
 export class HomePageComponent implements OnInit {
   title: string = "Drive X";
 
-  test: any = this.bana.getFruit();
+  test: string = this.bana.getFruit();
+
+  prixVente:number = this.resto.getPrice();
 
   constructor(  private bana: BananeService,
                 private resto: RestaurantService) {

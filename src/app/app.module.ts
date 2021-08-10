@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { DriverItemComponent } from './drivers-list/driver-item/driver-item.component';
 
 import { BananeService } from './services/banane.service';
+import { RestaurantService } from './services/restaurant.service'; // pas utilie mais permet de lister services dispos=>en lien avec la decla dans les providers
 
 registerLocaleData(localeFr, 'fr');
 
@@ -37,7 +38,8 @@ registerLocaleData(localeFr, 'fr');
     FormsModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: "fr-FR" },
-              BananeService],
+              BananeService,
+            RestaurantService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
