@@ -120,5 +120,26 @@ export class DataService {
 
   };
 
+  getNbBestDrivers(nb:number){
+    
+    this.dataDrivers.sort(function compare(a: {likeIts:number},b: {likeIts:number}){
+      if(a.likeIts > b.likeIts){
+        return -1;
+      }
+      if(a.likeIts < b.likeIts){
+        return 1;
+      }
+      return 0;
+    });
+
+    return this.dataDrivers.slice(0, nb);    
+  };
+
+ 
+
+  getNbPowerfullCars(nb:number){
+
+  };
+
   constructor() { }
 }
