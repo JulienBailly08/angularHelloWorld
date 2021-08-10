@@ -6,12 +6,17 @@
     <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
     <p class="lead">
         <a class="btn btn-dark btn-lg" href="#" role="button">eXotic Cars</a>
-
     </p>
-
 </div>
+
+<h2 class="text-center m-5">Nos pilotes d'exception</h2>
+
 <div class="card-deck justify-content-center">
-
     <app-driver-item *ngFor="let oneDriver of drivers" [driver]="oneDriver"></app-driver-item>
+</div>
 
+<h2 class="text-center m-5">Nos voitures de rêve</h2>
+
+<div class="card-deck justify-content-center">
+    <app-car-item *ngFor="let onecar of cars" [car]="onecar"></app-car-item>
 </div>

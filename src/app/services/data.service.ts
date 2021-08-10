@@ -135,10 +135,18 @@ export class DataService {
     return this.dataDrivers.slice(0, nb);    
   };
 
- 
-
   getNbPowerfullCars(nb:number){
+    this.dataCars.sort(function compare(a: {power:number},b: {power:number}){
+      if(a.power > b.power){
+        return -1;
+      }
+      if(a.power < b.power){
+        return 1;
+      }
+      return 0;
+    });
 
+    return this.dataCars.slice(0, nb); 
   };
 
   constructor() { }
