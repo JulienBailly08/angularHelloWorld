@@ -15,11 +15,11 @@ export class DriverItemComponent implements OnInit {
   }
 
   onLike(){
-    this.driver.likeIts=this.driver.likeIts+1;
+    this.driver.likeIts++;
   }
 
   onDislike(){
-    this.driver.likeIts=this.driver.likeIts-1;
+    this.driver.likeIts--;
   }
 
 }
