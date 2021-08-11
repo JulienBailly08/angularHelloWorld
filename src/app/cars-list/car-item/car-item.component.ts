@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Car } from 'src/app/models/Car';
 
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./car-item.component.css']
 })
 export class CarItemComponent implements OnInit {
-  @Input() car: any;
+  @Input()car !: Car;
   isBooked: boolean = false;
   bookingMessage:string="Réserver votre session";
   

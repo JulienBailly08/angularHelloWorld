@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
+import { Car } from '../models/Car';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  private dataCars:any=[
+  private dataCars:Car[]=[
     {
       name: "pagani huayra",
       pays: "italie",
       coverImage:"./assets/img/cars/pagani.jpg",
       power: 765,
-      perf: 3.2
+      perf: 3.2,
     },
     {
       name: "koenigsegg agera rs",
@@ -136,7 +137,7 @@ export class DataService {
   };
 
   getNbPowerfullCars(nb:number){
-    let dataCarsSlice = this.dataCars.slice(0, this.dataCars.lenght);
+    let dataCarsSlice = this.dataCars.slice(0, this.dataCars.length);
 
     dataCarsSlice.sort(function compare(a: {power:number},b: {power:number}){
       if(a.power > b.power){
