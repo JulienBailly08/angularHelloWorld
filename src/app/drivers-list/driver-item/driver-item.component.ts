@@ -1,4 +1,5 @@
 import { Component, Input,OnInit } from '@angular/core';
+import { Driver } from 'src/app/models/Driver';
 
 @Component({
   selector: 'app-driver-item',
@@ -6,7 +7,7 @@ import { Component, Input,OnInit } from '@angular/core';
   styleUrls: ['./driver-item.component.css']
 })
 export class DriverItemComponent implements OnInit {
-  @Input() driver: any;
+  @Input() driver!: Driver;
   
 
   constructor() { }

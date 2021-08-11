@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Car } from '../models/Car';
+import { Driver } from '../models/Driver';
 
 @Injectable({
   providedIn: 'root'
@@ -52,7 +53,7 @@ export class DataService {
     }
   ];
 
-  private dataDrivers:any= [
+  private dataDrivers:Driver[]= [
     {
       fullName: "ken block",
       pays: "usa",
@@ -121,7 +122,7 @@ export class DataService {
   };
 
   getNbBestDrivers(nb:number){
-    let dataDriversSlice = this.dataDrivers.slice(0,this.dataDrivers.lenght);
+    let dataDriversSlice = this.dataDrivers.slice(0,this.dataDrivers.length);
     
     dataDriversSlice.sort(function compare(a: {likeIts:number},b: {likeIts:number}){
       if(a.likeIts > b.likeIts){
