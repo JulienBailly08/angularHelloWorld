@@ -15,6 +15,7 @@ import localeFr from '@angular/common/locales/fr';
 import { FormsModule } from '@angular/forms';
 import { DriverItemComponent } from './drivers-list/driver-item/driver-item.component';
 import { FooterComponent } from './footer/footer.component';
+import { AbsValue } from './shared/abs-value.service';
 registerLocaleData(localeFr, 'fr');
 
 
@@ -28,7 +29,8 @@ registerLocaleData(localeFr, 'fr');
     FourOhFourComponent,
     CarItemComponent,
     DriverItemComponent,
-    FooterComponent
+    FooterComponent,
+    AbsValue
   ],
   imports: [
     BrowserModule,

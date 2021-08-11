@@ -117,7 +117,6 @@ export class DataService {
 
   getAllDrivers(){
     return this.dataDrivers;
-
   };
 
   getNbBestDrivers(nb:number){

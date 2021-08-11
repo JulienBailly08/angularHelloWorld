@@ -27,6 +27,18 @@
             }">{{ driver.category}} </span>
         </p>
 
+        <p [ngClass]="{
+            'text-danger': driver.likeIts<0,
+            'text-success': driver.likeIts>0
+        }">
+            <span *ngIf="driver.likeIts == 1 ">{{driver.likeIts | absValue }} Like</span>
+            <span *ngIf="driver.likeIts > 1 ">{{driver.likeIts | absValue }} Likes</span>
+            <span *ngIf="driver.likeIts == 0 ">Avis neutre</span>
+            <span *ngIf="driver.likeIts == -1 ">{{driver.likeIts | absValue }} DisLike</span>
+            <span *ngIf="driver.likeIts < -1 ">{{driver.likeIts | absValue }} DisLikes</span>
+        </p>
+
+
         <div class="">
             <button class="btn btn-success m-1" (click)=onLike()><i class="fas fa-thumbs-up text-white"></i></button>
             <button class="btn btn-danger m-1" (click)=onDislike()><i
