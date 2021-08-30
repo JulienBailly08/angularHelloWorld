@@ -1,6 +1,6 @@
 <h1 class="my-5">Créer une voiture</h1>
 <div class="col-6 border shadow my-5 p-5">
-    <form>
+    <form (ngSubmit)="onSubmit()">
         <div class="form-group">
             <label for="name">Nom de la voiture</label>
             <input type="text" class="form-control" id="name" name="name" ngModel>
@@ -21,6 +21,6 @@
             <label for="perf">Temps de 0 à 100km/h</label>
             <input type="number" class="form-control" id="perf" name="perf" ngModel>
         </div>
-        <button class="btn btn-success my-5">Creation</button>
+        <button type="submit" class="btn btn-success my-5">Création</button>
       </form>
 </div>
