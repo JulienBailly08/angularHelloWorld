@@ -16,10 +16,10 @@ export class CarsListComponent implements OnInit {
   constructor(private data:DataService) {
     
    }
-
+  
   ngOnInit(): void {
     this.carUpdate = new Date();
     this.cars = this.data.getAllCars();
-  }
+   }
 
 }

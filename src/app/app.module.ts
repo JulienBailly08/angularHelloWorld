@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { DriverItemComponent } from './drivers-list/driver-item/driver-item.component';
 import { FooterComponent } from './footer/footer.component';
 import { AbsValue } from './shared/abs-value.service';
+import { NewCarComponent } from './cars-list/new-car/new-car.component';
 registerLocaleData(localeFr, 'fr');
 
 
@@ -30,7 +31,8 @@ registerLocaleData(localeFr, 'fr');
     CarItemComponent,
     DriverItemComponent,
     FooterComponent,
-    AbsValue
+    AbsValue,
+    NewCarComponent
   ],
   imports: [
     BrowserModule,
