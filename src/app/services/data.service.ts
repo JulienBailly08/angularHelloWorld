@@ -6,25 +6,25 @@ import { Driver } from '../models/Driver';
 })
 export class DataService {
 
-  pokemon = new Car("pikachu","japon","https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Pokemon_%2831599837283%29.jpg/330px-Pokemon_%2831599837283%29.jpg",0.5,154);
+  pokemon = new Car("pikachu", "japon", "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Pokemon_%2831599837283%29.jpg/330px-Pokemon_%2831599837283%29.jpg", 0.5, 154);
 
-  public addCar(item: Car){
+  public addCar(item: Car) {
     this.dataCars.push(item);
   }
-  
-  private dataCars:Car[]=[
+
+  private dataCars: Car[] = [
     this.pokemon,
     {
       name: "pagani huayra",
       pays: "italie",
-      coverImage:"./assets/img/cars/pagani.jpg",
+      coverImage: "./assets/img/cars/pagani.jpg",
       power: 765,
       perf: 3.2,
     },
     {
       name: "koenigsegg agera rs",
       pays: "suède",
-      coverImage:"./assets/img/cars/koenigsegg.jpg",
+      coverImage: "./assets/img/cars/koenigsegg.jpg",
       power: 1383,
       perf: 2.6
 
@@ -32,34 +32,42 @@ export class DataService {
     {
       name: "zenvo tsr s",
       pays: "danemark",
-      coverImage:"./assets/img/cars/zenvo.jpg",
+      coverImage: "./assets/img/cars/zenvo.jpg",
       power: 1200,
       perf: 2.8
     },
     {
       name: "bugatti chiron",
       pays: "france",
-      coverImage:"./assets/img/cars/bugatti.jpg",
+      coverImage: "./assets/img/cars/bugatti.jpg",
       power: 1500,
       perf: 2.4
     },
     {
       name: "mercedes amg one",
       pays: "allemagne",
-      coverImage:"./assets/img/cars/mercedes.jpg",
+      coverImage: "./assets/img/cars/mercedes.jpg",
       power: 1000,
       perf: 2.2
     },
     {
       name: "ferrari sf90",
       pays: "italie",
-      coverImage:"./assets/img/cars/ferrari.jpg",
+      coverImage: "./assets/img/cars/ferrari.jpg",
       power: 1000,
       perf: 2.5
     }
   ];
 
-  private dataDrivers:Driver[]= [
+  getAllCars() {
+    return this.dataCars;
+  };
+
+  getAllDrivers() {
+    return this.dataDrivers;
+  };
+
+  private dataDrivers: Driver[] = [
     {
       fullName: "ken block",
       pays: "usa",
@@ -116,47 +124,40 @@ export class DataService {
       category: "drag",
       likeIts: 0
     },
-    
+
   ];
 
-  getAllCars(){
-    return this.dataCars;
-  };
 
-  getAllDrivers(){
-    return this.dataDrivers;
-  };
+  getNbBestDrivers(nb: number) {
+    let dataDriversSlice = this.dataDrivers.slice(0, this.dataDrivers.length);
 
-  getNbBestDrivers(nb:number){
-    let dataDriversSlice = this.dataDrivers.slice(0,this.dataDrivers.length);
-    
-    dataDriversSlice.sort(function compare(a: {likeIts:number},b: {likeIts:number}){
-      if(a.likeIts > b.likeIts){
+    dataDriversSlice.sort(function compare(a: { likeIts: number }, b: { likeIts: number }) {
+      if (a.likeIts > b.likeIts) {
         return -1;
       }
-      if(a.likeIts < b.likeIts){
+      if (a.likeIts < b.likeIts) {
         return 1;
       }
       return 0;
     });
 
-    return dataDriversSlice.slice(0, nb);    
+    return dataDriversSlice.slice(0, nb);
   };
 
-  getNbPowerfullCars(nb:number){
+  getNbPowerfullCars(nb: number) {
     let dataCarsSlice = this.dataCars.slice(0, this.dataCars.length);
 
-    dataCarsSlice.sort(function compare(a: {power:number},b: {power:number}){
-      if(a.power > b.power){
+    dataCarsSlice.sort(function compare(a: { power: number }, b: { power: number }) {
+      if (a.power > b.power) {
         return -1;
       }
-      if(a.power < b.power){
+      if (a.power < b.power) {
         return 1;
       }
       return 0;
     });
 
-    return dataCarsSlice.slice(0, nb); 
+    return dataCarsSlice.slice(0, nb);
   };
 
   constructor() { }

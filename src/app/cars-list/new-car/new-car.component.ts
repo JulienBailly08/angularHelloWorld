@@ -16,14 +16,15 @@ export class NewCarComponent implements OnInit {
 
   ngOnInit(): void {
   }
+ 
   
   onSubmit(myForm : NgForm) {
 
-     const newCar = new Car(myForm.value['name'],myForm.value['pays'],myForm.value['coverImage'],myForm.value['power'],myForm.value['perf']);  
+    const newCar = new Car(myForm.value['name'],myForm.value['pays'],myForm.value['coverImage'],myForm.value['power'],myForm.value['perf']);  
 
     this.data.addCar(newCar);
 
-    this.router.navigate(['/cars']);    
+    this.router.navigate(['cars']);    
   }
 
 }
