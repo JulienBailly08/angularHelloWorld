@@ -19,9 +19,7 @@ export class NewCarComponent implements OnInit {
   
   onSubmit(myForm : NgForm) {
 
-    console.log(myForm.value);
-
-    const newCar = new Car(myForm.value['name'],myForm.value['pays'],myForm.value['coverImage'],myForm.value['power'],myForm.value['perf']);  
+     const newCar = new Car(myForm.value['name'],myForm.value['pays'],myForm.value['coverImage'],myForm.value['power'],myForm.value['perf']);  
 
     this.data.addCar(newCar);
 
