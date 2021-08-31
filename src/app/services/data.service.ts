@@ -6,6 +6,12 @@ import { Driver } from '../models/Driver';
 })
 export class DataService {
 
+  categories:string[] = ["rallye","nascar","drag","formule 1","gymkhana"];
+
+  getCategories(){
+    return this.categories;
+  }
+
   pokemon = new Car("pikachu", "japon", "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Pokemon_%2831599837283%29.jpg/330px-Pokemon_%2831599837283%29.jpg", 0.5, 154);
 
   public addCar(item: Car) {

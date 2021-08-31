@@ -33,11 +33,7 @@
             <label for="category">Spécialité</label>
             <select  class="form-control" formControlName="category" id="category" required>
                 <option value="">Choisir une discipline</option>
-                <option value="rallye">Rallye</option>
-                <option value="nascar">Nascar</option>
-                <option value="drag">Drag</option>
-                <option value="formule 1">Formule 1</option>
-                <option value="gymkhana">Gymkhana</option>
+                <option *ngFor="let category of categories" [value]="category">{{category}}</option>
             </select>
         </div>
 

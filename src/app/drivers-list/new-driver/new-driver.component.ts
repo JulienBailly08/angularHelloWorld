@@ -12,11 +12,13 @@ import { DataService } from 'src/app/services/data.service';
 export class NewDriverComponent implements OnInit {
 
   driverForm!: FormGroup;
+  categories:any;
  
   constructor(private data:DataService, private router:Router, private formBuilder:FormBuilder) { }
 
   ngOnInit(): void {
     this.createForm();
+    this.categories=this.data.getCategories();
   }
 
   createForm(){
