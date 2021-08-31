@@ -12,11 +12,12 @@ import { CarItemComponent } from './cars-list/car-item/car-item.component';
 
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DriverItemComponent } from './drivers-list/driver-item/driver-item.component';
 import { FooterComponent } from './footer/footer.component';
 import { AbsValue } from './shared/abs-value.service';
 import { NewCarComponent } from './cars-list/new-car/new-car.component';
+import { NewDriverComponent } from './drivers-list/new-driver/new-driver.component';
 registerLocaleData(localeFr, 'fr');
 
 
@@ -32,12 +33,14 @@ registerLocaleData(localeFr, 'fr');
     DriverItemComponent,
     FooterComponent,
     AbsValue,
-    NewCarComponent
+    NewCarComponent,
+    NewDriverComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: "fr-FR" }],
   bootstrap: [AppComponent]

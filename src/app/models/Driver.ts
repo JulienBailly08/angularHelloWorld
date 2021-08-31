@@ -12,7 +12,7 @@
                 public pays:string | null,   
                 public coverImage:string, 
                 public category:string, 
-                public likeIts:number){
+                public likeIts:number = 0){
        
     }
 }

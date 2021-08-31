@@ -67,7 +67,14 @@ export class DataService {
     return this.dataDrivers;
   };
 
+  pilote2ouf = new Driver("juju","Drôme","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrYbpsDKFGEuJMaIvK5pNNRSNbakxql3-HxQ&usqp=CAU","fun");
+  
+  public addDriver(item: Driver) {
+    this.dataDrivers.push(item);
+  }
+  
   private dataDrivers: Driver[] = [
+    this.pilote2ouf,
     {
       fullName: "ken block",
       pays: "usa",
