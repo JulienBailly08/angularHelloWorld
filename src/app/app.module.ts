@@ -18,6 +18,8 @@ import { FooterComponent } from './footer/footer.component';
 import { AbsValue } from './shared/abs-value.service';
 import { NewCarComponent } from './cars-list/new-car/new-car.component';
 import { NewDriverComponent } from './drivers-list/new-driver/new-driver.component';
+import { DataFromApiComponent } from './data-from-api/data-from-api.component';
+import { HttpClientModule } from '@angular/common/http';
 registerLocaleData(localeFr, 'fr');
 
 
@@ -34,13 +36,15 @@ registerLocaleData(localeFr, 'fr');
     FooterComponent,
     AbsValue,
     NewCarComponent,
-    NewDriverComponent
+    NewDriverComponent,
+    DataFromApiComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [{ provide: LOCALE_ID, useValue: "fr-FR" }],
   bootstrap: [AppComponent]

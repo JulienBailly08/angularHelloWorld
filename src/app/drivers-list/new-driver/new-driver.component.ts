@@ -30,6 +30,7 @@ export class NewDriverComponent implements OnInit {
     })
   }
   onSubmit(){
+    
     const formValue = this.driverForm.value;
     const driver = new Driver(
       formValue['fullName'],
