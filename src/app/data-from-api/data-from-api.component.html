@@ -1,19 +1,16 @@
-<p>Retour de l'api
+<p>Retour de l'api</p>
 
-
-{{response | json}}
+<p>
+{{response.data | json}}
 
 
 </p>
 
+<div *ngFor="let item of response.data"><p>{{item | json}}</p> <p>{{item.last_name}}  possèdant l'adresse : {{item.email}} et l'ID : {{item.id}}</p> 
+<img src="{{item.avatar}}" alt="">
+</div>
 
 
 
-<p>Retour de l'api sans traitement
 
-
-    {{response}}
-    
-    
-    </p>
 
