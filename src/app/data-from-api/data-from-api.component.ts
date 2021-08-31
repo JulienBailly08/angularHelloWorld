@@ -14,7 +14,7 @@ export class DataFromApiComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.http.get("https://reqres.in/api/users?page=2").subscribe( data =>this.response=data);
+    this.http.get<any>("https://reqres.in/api/users?page=2").subscribe( data =>this.response=data); // typage possible après le .get et avant l'url de contact
   }
 
 }
