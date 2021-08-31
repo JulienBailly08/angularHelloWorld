@@ -21,7 +21,7 @@ export class NewDriverComponent implements OnInit {
 
   createForm(){
     this.driverForm= this.formBuilder.group({
-      fullName:['', Validators.required],
+      fullName:['', [Validators.required, Validators.pattern("[a-zA-Z ]*")]],
       pays: ['',[Validators.required, Validators.minLength(2)]],
       coverImage:['', Validators.required],
       category:['', Validators.required]

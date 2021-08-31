@@ -4,22 +4,34 @@
 
         <div class="form-group">
             <label for="name">Nom du pilote</label>
-            <input type="text" class="form-control" id="name" formControlName="fullName" >
+            <span class="text-danger" *ngIf="driverForm.controls['fullName'].errors && driverForm.controls['fullName'].hasError('required') || driverForm.controls['fullName'].hasError('pattern')">
+                *
+            </span>
+            <input type="text" class="form-control" id="name" formControlName="fullName" required >
+            <small class="badge badge-danger my-2" *ngIf="driverForm.controls['fullName'].hasError('required') && driverForm.controls['fullName'].touched">
+                Ce champs est requis
+            </small>
+            <small class="badge badge-danger my-2" *ngIf="driverForm.controls['fullName'].errors && driverForm.controls['fullName'].hasError('pattern')">
+                Seul les caractères alphabetiques sont autorisés
+            </small>
         </div>
 
         <div class="form-group">
             <label for="pays">Pays d'origine</label>
-            <input type="text" class="form-control" id="pays" formControlName="pays" >
+            <input type="text" class="form-control" id="pays" formControlName="pays" required>
+            <small class="badge badge-danger my-2" *ngIf="driverForm.controls['pays'].hasError('minlength')">
+                Il faut au moins {{ driverForm.controls['pays'].hasError('minlength') }} <!-- renvoie true et non la valeur -->
+            </small>
         </div>
 
         <div class="form-group">
             <label for="coverImage">Image du pilote (url)</label>
-            <input type="text" class="form-control" id="coverImage" formControlName="coverImage" >
+            <input type="text" class="form-control" id="coverImage" formControlName="coverImage" required>
         </div>
 
         <div class="form-group">
             <label for="category">Spécialité</label>
-            <select  class="form-control" formControlName="category" id="category" >
+            <select  class="form-control" formControlName="category" id="category" required>
                 <option value="">Choisir une discipline</option>
                 <option value="rallye">Rallye</option>
                 <option value="nascar">Nascar</option>
