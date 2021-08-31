@@ -1,24 +1,25 @@
 <h1 class="my-5">Créer un pilote</h1>
 <div class="col-6 border shadow my-5 p-5">
-    <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+    <form (ngSubmit)="onSubmit()" [formGroup]="driverForm">
+
         <div class="form-group">
             <label for="name">Nom du pilote</label>
-            <input type="text" class="form-control" id="name" name="name" ngModel
-                required>
+            <input type="text" class="form-control" id="name" formControlName="fullName" >
         </div>
+
         <div class="form-group">
             <label for="pays">Pays d'origine</label>
-            <input type="text" class="form-control" id="pays" name="pays" ngModel
-                required>
+            <input type="text" class="form-control" id="pays" formControlName="pays" >
         </div>
+
         <div class="form-group">
             <label for="coverImage">Image du pilote (url)</label>
-            <input type="text" class="form-control" id="coverImage" name="coverImage" ngModel
-                required>
+            <input type="text" class="form-control" id="coverImage" formControlName="coverImage" >
         </div>
+
         <div class="form-group">
             <label for="category">Spécialité</label>
-            <select  class="form-control" name="category" id="category" ngModel required>
+            <select  class="form-control" formControlName="category" id="category" >
                 <option value="">Choisir une discipline</option>
                 <option value="rallye">Rallye</option>
                 <option value="nascar">Nascar</option>
@@ -27,9 +28,9 @@
                 <option value="gymkhana">Gymkhana</option>
             </select>
         </div>
-        <button type="submit" class="btn btn-success my-5">Création</button>
+
+        <button type="submit" [disabled]="driverForm.invalid" class="btn btn-success my-5">Création</button>
+
     </form>
 </div>
 
-<label for="name">Name: </label>
-<input id="name" type="text" [formControl]="test">

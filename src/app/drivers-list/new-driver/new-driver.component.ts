@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup} from '@angular/forms';
 import { Router } from '@angular/router';
 import { Driver } from 'src/app/models/Driver';
 import { DataService } from 'src/app/services/data.service';
@@ -11,20 +11,33 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class NewDriverComponent implements OnInit {
 
-  test= new FormControl('');
-
-  constructor(private data:DataService, private router:Router) { }
+  driverForm!: FormGroup;
+ 
+  constructor(private data:DataService, private router:Router, private formBuilder:FormBuilder) { }
 
   ngOnInit(): void {
+    this.createForm();
   }
 
-  onSubmit(myForm : NgForm) {
-
-    const newDriver = new Driver(myForm.value['fullName'],myForm.value['pays'],myForm.value['coverImage'],myForm.value['category']);  
-
-    this.data.addDriver(newDriver);
-
-    this.router.navigate(['drivers']);    
+  createForm(){
+    this.driverForm= this.formBuilder.group({
+      fullName:[''],
+      pays: [''],
+      coverImage:[''],
+      category:['']
+    })
   }
-
+  onSubmit(){
+    const formValue = this.driverForm.value;
+    const driver = new Driver(
+      formValue['fullName'],
+      formValue['pays'],
+      formValue['coverImage'],
+      formValue['category']
+    )
+    this.data.addDriver(driver);
+    this.router.navigate(['drivers']);
+  }
+  
+    
 }
